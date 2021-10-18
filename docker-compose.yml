@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  php:
+    image: oxodao/php:8.0-alpine-cli
+    build: { context: . }
+    working_dir: /app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./:/app
